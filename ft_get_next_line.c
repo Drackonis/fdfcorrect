@@ -6,7 +6,7 @@
 /*   By: rkergast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 17:05:18 by rkergast          #+#    #+#             */
-/*   Updated: 2019/09/07 15:17:19 by rkergast         ###   ########.fr       */
+/*   Updated: 2019/09/07 15:26:12 by rkergast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ t_lines				set_chain(int fd, t_lines begin, t_data *data)
 		}
 		else
 		{
-			(data->linlen != (int)ft_strlen(line) ? invalid_map() : 0);
 			current->next = set_link(data->idx, line);
 			current = current->next;
 		}
