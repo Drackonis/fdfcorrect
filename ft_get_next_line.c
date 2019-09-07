@@ -6,7 +6,7 @@
 /*   By: rkergast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 17:05:18 by rkergast          #+#    #+#             */
-/*   Updated: 2019/09/07 15:26:12 by rkergast         ###   ########.fr       */
+/*   Updated: 2019/09/07 17:41:56 by rkergast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ t_lines				set_chain(int fd, t_lines begin, t_data *data)
 	set_value(data);
 	while ((data->ret = get_next_line(fd, &line)) == 1)
 	{
+		(line == NULL || *line == '\0') ? invalid_map() : 0;
 		if (data->start == 0)
 		{
 			begin.index = data->idx;
@@ -61,7 +62,7 @@ t_lines				set_chain(int fd, t_lines begin, t_data *data)
 		}
 		next_free(data, line);
 	}
-	((data->ret == 0 && data->linlen <= 0) ? fd_empty() : 0);
+	((data->ret <= 0 && data->linlen <= 0) ? invalid_map() : 0);
 	data->nblin = data->idx;
 	current->next = NULL;
 	return (begin);
