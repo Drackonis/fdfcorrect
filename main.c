@@ -6,7 +6,7 @@
 /*   By: rkergast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 16:58:25 by rkergast          #+#    #+#             */
-/*   Updated: 2019/09/07 15:13:46 by rkergast         ###   ########.fr       */
+/*   Updated: 2019/09/07 15:23:34 by rkergast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int				main(int argc, char **argv)
 		begin = read_arg(argv, begin, &data);
 		data.begin = &begin;
 		data.tab = ft_settab(&begin, &data);
-		if (!data.tab || (data.nblin != data.nbcol))
+		if (!data.tab)
 		{
 			write(1, "Invalide Map !\n", 15);
 			return (0);
