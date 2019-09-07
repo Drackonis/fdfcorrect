@@ -6,7 +6,7 @@
 /*   By: rkergast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 17:05:18 by rkergast          #+#    #+#             */
-/*   Updated: 2019/09/02 15:45:48 by rkergast         ###   ########.fr       */
+/*   Updated: 2019/09/07 14:27:13 by rkergast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	get_line(const int fd, char **line, char **tab)
 
 int		end_of_fd(int ret, char **tab, const int fd)
 {
-	if (ret < BUFF_SIZE && !ft_strlen(tab[fd]))
+	if (!tab[fd] || (ret < BUFF_SIZE && !ft_strlen(tab[fd])))
 		return (0);
 	return (1);
 }

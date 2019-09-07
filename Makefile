@@ -6,14 +6,14 @@
 #    By: rkergast <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/24 16:06:19 by rkergast          #+#    #+#              #
-#    Updated: 2019/09/02 17:35:02 by rkergast         ###   ########.fr        #
+#    Updated: 2019/09/07 14:50:04 by rkergast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 define SRC_NAME
 main.c ft_get_next_line.c ft_getkey.c ft_setkey.c ft_settab.c ft_setwin.c\
 ft_tabtopix.c ft_initmlx.c ft_drawimg.c ft_bresenham.c ft_setcolor.c\
-ft_setcolor2.c ft_utils.c ft_putcolor.c  get_next_line.c
+ft_setcolor2.c ft_utils.c ft_putcolor.c  get_next_line.c ft_error.c
 endef
 
 CC = gcc

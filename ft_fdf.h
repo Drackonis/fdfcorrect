@@ -6,7 +6,7 @@
 /*   By: rkergast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 17:02:26 by rkergast          #+#    #+#             */
-/*   Updated: 2019/09/03 14:15:30 by rkergast         ###   ########.fr       */
+/*   Updated: 2019/09/07 15:00:59 by rkergast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ typedef	struct			s_data
 	int					ret;
 	int					idx;
 	int					start;
+	int					linlen;
 }						t_data;
 
 typedef struct			s_lines
@@ -171,5 +172,11 @@ void					ft_setcyan(t_data *data);
 void					ft_setpurple(t_data *data);
 void					ft_setblack(t_data *data);
 void					ft_setgrey(t_data *data);
+
+void					malloc_error(void);
+void					read_fail(void);
+void					invalid_map(void);
+void					open_fail(void);
+void					fd_empty(void);
 
 #endif

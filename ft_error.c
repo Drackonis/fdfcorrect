@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkergast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/05 16:58:25 by rkergast          #+#    #+#             */
-/*   Updated: 2019/09/07 15:13:46 by rkergast         ###   ########.fr       */
+/*   Created: 2019/09/07 14:50:09 by rkergast          #+#    #+#             */
+/*   Updated: 2019/09/07 14:59:47 by rkergast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_fdf.h"
 
-int				main(int argc, char **argv)
+void				malloc_error(void)
 {
-	t_lines		begin;
-	t_data		data;
+	write(1, "Malloc Error !\n", 15);
+	exit(0);
+}
 
-	if (argc == 2)
-	{
-		begin.index = 0;
-		begin = read_arg(argv, begin, &data);
-		data.begin = &begin;
-		data.tab = ft_settab(&begin, &data);
-		if (!data.tab || (data.nblin != data.nbcol))
-		{
-			write(1, "Invalide Map !\n", 15);
-			return (0);
-		}
-		ft_initmlx(&data);
-	}
-	else
-		write(1, "Argument error !\n", 18);
-	return (0);
+void				read_fail(void)
+{
+	write(1, "Read FD Fail !\n", 15);
+	exit(0);
+}
+
+void				invalid_map(void)
+{
+	write(1, "Invalide Map !\n", 15);
+	exit(0);
+}
+
+void				open_fail(void)
+{
+	write(1, "Open FD Fail !\n", 15);
+	exit(0);
+}
+
+void				fd_empty(void)
+{
+	write(1, "FD Empty !\n", 11);
+	exit(0);
 }
